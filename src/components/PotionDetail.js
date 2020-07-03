@@ -10,10 +10,10 @@ function PotionDetail(props) {
     stockDisplay = "Out of Stock!";
   }
   let lowStockDisplayWarning;
-  if (potion.stock < 10) {
-    lowStockDisplayWarning = "Almost Out!";
-  } else {
+  if (potion.stock > 10 || potion.stock === 0) {
     lowStockDisplayWarning = null;
+  } else {
+    lowStockDisplayWarning = "Almost Out!";
   }
   return (
     <React.Fragment>
