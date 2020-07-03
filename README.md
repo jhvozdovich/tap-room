@@ -71,7 +71,8 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * Almost empty warning when stock falls below 10
 * Color coding prices of potions
 
-
+## Resources
+* [Potion Images - Minecraft Sprites](https://minecraft.gamepedia.com/Potion#Potions_with_positive_effects)
 
 
 #### License
