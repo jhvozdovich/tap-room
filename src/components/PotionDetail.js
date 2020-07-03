@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PotionDetail(props) {
-  const { potion } = props;
+  const { potion, onClickingDelete } = props;
   return (
     <React.Fragment>
       <h3>{potion.name} Details</h3>
@@ -12,13 +12,15 @@ function PotionDetail(props) {
       <p>Effect: {potion.effect}</p>
       <p>Stock: {potion.stock}</p>
       <button onClick={props.onClickingUpdate}>Update Potion</button>
+      <button onClick={() => onClickingDelete(potion.id)}>Delete Potion</button>
     </React.Fragment>
   )
 }
 
 PotionDetail.propTypes = {
   potion: PropTypes.object,
-  onClickingUpdate: PropTypes.func
+  onClickingUpdate: PropTypes.func,
+  onClickingDelete: PropTypes.func
 }
 
 export default PotionDetail;

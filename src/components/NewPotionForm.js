@@ -9,10 +9,10 @@ function NewPotionForm(props) {
     event.preventDefault();
     props.onNewPotionCreation({
       name: event.target.name.value,
-      price: event.target.price.value,
+      price: parseInt(event.target.price.value),
       duration: event.target.duration.value,
       effect: event.target.effect.value,
-      stock: event.target.stock.value,
+      stock: parseInt(event.target.stock.value),
       img: event.target.img.value,
       id: v4()
     });

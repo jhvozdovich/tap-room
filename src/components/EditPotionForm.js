@@ -21,15 +21,12 @@ function EditPotionForm(props) {
     if (event.target.stock.value === "") {
       event.target.stock.value = potion.stock;
     }
-    if (event.target.img.value === "") {
-      event.target.img.value = potion.img;
-    }
     props.onEditPotion({
       name: event.target.name.value,
-      price: event.target.price.value,
+      price: parseInt(event.target.price.value),
       duration: event.target.duration.value,
       effect: event.target.effect.value,
-      stock: event.target.stock.value,
+      stock: parseInt(event.target.stock.value),
       img: event.target.img.value,
       id: potion.id
     });

@@ -56,7 +56,6 @@ class PotionControl extends React.Component {
     if (this.state.selectedPotionVisible === null) {
       const selectedPotion = this.state.potionList.filter(potion => potion.id === id)[0];
       this.setState({ selectedPotionVisible: selectedPotion });
-      console.log(selectedPotion);
     } else {
       this.setState({ selectedPotionVisible: null });
     }
@@ -79,6 +78,14 @@ class PotionControl extends React.Component {
     });
   }
 
+  handleDeletingPotion = (id) => {
+    const newPotionList = this.state.potionList.filter(potion => potion.id !== id);
+    this.setState({
+      potionList: newPotionList,
+      selectedPotionVisible: null
+    })
+  }
+
   render() {
     let currentlyVisibleState = null;
     let navButton = null;
@@ -90,7 +97,8 @@ class PotionControl extends React.Component {
     } else if (this.state.selectedPotionVisible !== null) {
       currentlyVisibleState = <PotionDetail
         potion={this.state.selectedPotionVisible}
-        onClickingUpdate={this.handleUpdatingFormVisible} />
+        onClickingUpdate={this.handleUpdatingFormVisible}
+        onClickingDelete={this.handleDeletingPotion} />
       navButton = <button onClick={this.handleSelectedPotion}>Back to List</button>
     } else if (this.state.creatingFormVisible) {
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotion} />
