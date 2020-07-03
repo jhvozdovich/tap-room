@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Witchy Brew**
 
-## Available Scripts
+### _React Fundamentals - Week 16 Project at Epicodus_
 
-In the project directory, you can run:
+#### Author: **Jessica Hvozdovich**
+#### July 2, 2020
 
-### `npm start`
+### Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_This application serves as a potion tracking app for a local witch to monitor their product storage. Design is based on Minecraft's design and items with resources listed below. Full CRUD functionality with React is the goal using functional and class components, local and shared state, JSX, and props with PropTypes._
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Instructions for use:
 
-### `npm test`
+1. Open Terminal (macOS) or PowerShell (Windows)
+2. To download the project Directory to your desktop enter the following commands:
+```
+cd Desktop
+git clone https://github.com/jhvozdovich/tap-room.git
+cd tap-room
+```
+3. To view the downloaded files, open them in a text editor or IDE of your choice.
+* if you have VSCode for example, when your terminal is within the main project Directory you can open all of the files with the command:
+```
+code .
+```
+4. Download node and node package manager if they are not already installed on your device. You can find further instructions [here](https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript-8d3b52cf-3755-481d-80c5-46f1d3a8ffeb/installing-node-js-14f2721a-61e0-44b3-af1f-73f17348c8f4).
+5. Run npm install in your terminal to download the necessary dependencies, plugins, and modules.
+```
+npm install
+```
+6. The command npm run start will build and open the compiled code in a browser of your choice using a local host.
+```
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Known Bugs
 
-### `npm run build`
+No bugs have been identified at the time of this update.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Support and Contact Information
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Please contact me with any suggestions or questions at jhvozdovich@gmail.com. Thank you for your input!  
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/jhvozdovich/tap-room/issues) here on GitHub._
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used
 
-### `npm run eject`
+* React
+* JSX
+* JavaScript
+* HTML
+* Git and GitHub
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Specs
+| Spec | Input | Output |
+| :------------- | :------------- | :------------- |
+| **User can view a list of all available potions** | User Input:"localhost:3000" | Output: “Potion of Regeneration, Potion of Swiftness, Potion of Fire Resistance" |
+| **Clicking on the potion displays details such as name, price, duration, effect, and stock** | User Input:"Click: Potion of Regeneration" | Output: “Name: Potion of Regeneration, Price: 4 gold ingots, Duration: 0:45, Effect: Restores 18 health over time, Stock: 10 bottles" |
+| **User can access a form to add new potions to the list** | User Input:"Click: Add potion" | Output: “New potion form is displayed" |
+| **User can add potions to the list via the form** | User Input:"Name: Potion of Night Vision, Price: 6 gold ingots, Duration: 3:00, Effect: Visually brightens everything to a light level of 15, Stock: 5 bottles" | Output: “Potion of Regeneration, Potion of Swiftness, Potion of Fire Resistance, Potion of Night Vision" |
+| **User can decrement potion quantity with 'buy"** | User Input:"Potion Stock: 2, Click: Buy" | Output: “Potion Stock: 1" |
+| **"Out of Stock" is displayed when there are no potions left and the quantity cannot be decremented below 0** | User Input:"Potion Stock: "Out of Stock" Click: Buy" | Output: “Sorry! You better restock those potions!" |
+| **User can increase potion quantity with 'restock"** | User Input:"Potion Stock: 2, Click: Restock" | Output: “Potion Stock: 7" |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Stretch Goals
+* Editing a potion's properties
+* Deleting a potion
+* Almost empty warning when stock falls below 10
+* Color coding prices of potions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Component diagram](public/TapRoomComponentDiagram.jpg)
 
-## Learn More
+#### License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This software is licensed under the MIT license.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright © 2020 **_Jessica Hvozdovich_**
