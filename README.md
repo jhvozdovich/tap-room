@@ -50,6 +50,10 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * HTML
 * Git and GitHub
 
+### Project Structure
+
+![Component diagram](public/TapRoomComponentDiagram.)
+
 ### Specs
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
@@ -68,7 +72,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * Color coding prices of potions
 
 
-![Component diagram](public/TapRoomComponentDiagram.jpg)
+
 
 #### License
 
