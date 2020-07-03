@@ -86,6 +86,17 @@ class PotionControl extends React.Component {
     })
   }
 
+  handleBuyingPotion = (id) => {
+    const purchasedPotion = this.state.potionList.filter(potion => potion.id === id)[0];
+    if (purchasedPotion.stock > 0) {
+      purchasedPotion.stock -= 1;
+      const updatedPotionList = this.state.potionList.filter(potion => potion.id !== this.state.selectedPotionVisible.id).concat(purchasedPotion);
+      this.setState({
+        potionList: updatedPotionList
+      });
+    }
+  }
+
   render() {
     let currentlyVisibleState = null;
     let navButton = null;
@@ -98,7 +109,8 @@ class PotionControl extends React.Component {
       currentlyVisibleState = <PotionDetail
         potion={this.state.selectedPotionVisible}
         onClickingUpdate={this.handleUpdatingFormVisible}
-        onClickingDelete={this.handleDeletingPotion} />
+        onClickingDelete={this.handleDeletingPotion}
+        onClickingBuy={this.handleBuyingPotion} />
       navButton = <button onClick={this.handleSelectedPotion}>Back to List</button>
     } else if (this.state.creatingFormVisible) {
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotion} />
