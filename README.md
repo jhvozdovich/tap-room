@@ -5,6 +5,8 @@
 #### Author: **Jessica Hvozdovich**
 #### July 2, 2020
 
+![Screenshot of Webpage](./public/CraftyBrewScreenshot.png)
+
 ### Description
 
 _This application serves as a potion tracking app for a local adventure shop to monitor their product storage. The site is Minecraft themed and image resources are listed below. Full CRUD functionality with React is achieved using functional and class components, local and shared state, JSX, and props with PropTypes._
@@ -67,10 +69,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 | **User can access a form to edit existing potions** | User Input:"Click: Edit Potion" | Output: “Edit potion form is displayed" |
 | **User can edit potions via the form, empty fields retain their original information** | User Input:"Name: Potion of Seeing in the Dark"| Output: "Name: Potion of Seeing in the Dark, Price: 6 gold ingots, Duration: 3:00, Effect: Visually brightens everything to a light level of 15, Stock: 5 bottles" |
 | **User can delete a potion** | User Input:"Click: Potion of Regeneration, Click: Delete" | Output: “Potion of Swiftness, Potion of Fire Resistance, Potion of Night Vision" |
-| **An "Almost Out of Stock" wanring appears when stock is below 10** | User Input:"Stock: 10, Click: Buy" | Output: “Stock: 9 Almost Out!" |
-
-### Stretch Goals
-* Color coding prices of potions
+| **An "Almost Out of Stock" warning appears when stock is below 10** | User Input:"Stock: 10, Click: Buy" | Output: “Stock: 9 Almost Out!" |
 
 ## Resources
 * [Potion Images - Minecraft Sprites](https://minecraft.gamepedia.com/Potion#Potions_with_positive_effects)

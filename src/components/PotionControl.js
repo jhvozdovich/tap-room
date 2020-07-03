@@ -7,6 +7,9 @@ import EditPotionForm from "./EditPotionForm";
 import Indigo from "../img/Indigo.gif";
 import Purple from "../img/Purple.gif";
 import Pink from "../img/Pink.gif";
+import LightBlue from "../img/LightBlue.gif";
+import Lavendar from "../img/Lavendar.gif";
+import PaleGreen from "../img/PaleGreen.gif";
 
 
 class PotionControl extends React.Component {
@@ -38,11 +41,38 @@ class PotionControl extends React.Component {
         {
           name: "Potion of Fire Resistance",
           price: 8,
-          duration: "8:00",
+          duration: "3:00",
           effect: "Gives immunity to damage from fire, lava, magma blocks, campfires, and blazes' ranged attacks.",
           stock: 15,
           img: Pink,
           id: "2"
+        },
+        {
+          name: "Potion of Swiftness",
+          price: 3,
+          duration: "3:00",
+          effect: "Increases movement speed, sprinting speed, and jumping length by 20%.",
+          stock: 0,
+          img: LightBlue,
+          id: "3"
+        },
+        {
+          name: "Potion of Invisibility",
+          price: 10,
+          duration: "3:00",
+          effect: "Renders the player invisible.",
+          stock: 12,
+          img: Lavendar,
+          id: "4"
+        },
+        {
+          name: "Potion of Luck",
+          price: 2,
+          duration: "5:00",
+          effect: "Increases the luck attribute by 1 point.",
+          stock: 1,
+          img: PaleGreen,
+          id: "5"
         }
       ]
     }

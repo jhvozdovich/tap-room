@@ -7,7 +7,7 @@ function PotionList(props) {
   if (props.potionList.length === 0) {
     instructionText = "You have no potions! Add a few!";
   } else {
-    instructionText = "Click a potion for more information";
+    instructionText = "Click a potion for more information.";
   }
 
   return (
