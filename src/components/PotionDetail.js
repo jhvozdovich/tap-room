@@ -47,8 +47,10 @@ function PotionDetail(props) {
       <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
       <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
       <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
+      <br />
       <button onClick={props.onClickingUpdate}>Update Potion</button>
       <button onClick={() => onClickingDelete(potion.id)}>Delete Potion</button>
+      <br />
     </React.Fragment>
   )
 }

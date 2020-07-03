@@ -6,8 +6,10 @@ import PotionControl from './PotionControl';
 function App() {
   return (
     <React.Fragment>
-      <Header />
-      <PotionControl />
+      <div class="text-background">
+        <Header />
+        <PotionControl />
+      </div>
     </React.Fragment>
   );
 }
