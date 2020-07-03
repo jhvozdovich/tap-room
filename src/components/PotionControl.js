@@ -6,6 +6,7 @@ import EditPotionForm from "./EditPotionForm";
 
 import Indigo from "../img/Indigo.gif";
 import Purple from "../img/Purple.gif";
+import Pink from "../img/Pink.gif";
 
 
 class PotionControl extends React.Component {
@@ -33,6 +34,15 @@ class PotionControl extends React.Component {
           stock: 5,
           img: Indigo,
           id: "1"
+        },
+        {
+          name: "Potion of Fire Resistance",
+          price: 8,
+          duration: "8:00",
+          effect: "Gives immunity to damage from fire, lava, magma blocks, campfires, and blazes' ranged attacks.",
+          stock: 15,
+          img: Pink,
+          id: "2"
         }
       ]
     }

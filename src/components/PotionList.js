@@ -6,18 +6,20 @@ function PotionList(props) {
   return (
     <React.Fragment>
       <h4>Click a potion for more information</h4>
-      {props.potionList.map((potion) =>
-        <Potion
-          whenPotionClicked={props.onPotionSelection}
-          name={potion.name}
-          price={potion.price}
-          duration={potion.duration}
-          effect={potion.effect}
-          stock={potion.stock}
-          img={potion.img}
-          id={potion.id}
-          key={potion.id} />
-      )}
+      <div className="potion-list">
+        {props.potionList.map((potion) =>
+          <Potion
+            whenPotionClicked={props.onPotionSelection}
+            name={potion.name}
+            price={potion.price}
+            duration={potion.duration}
+            effect={potion.effect}
+            stock={potion.stock}
+            img={potion.img}
+            id={potion.id}
+            key={potion.id} />
+        )}
+      </div>
     </React.Fragment>
   )
 }

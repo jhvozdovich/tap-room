@@ -10,7 +10,7 @@ function Potion(props) {
   }
   return (
     <React.Fragment>
-      <div onClick={() => props.whenPotionClicked(props.id)}>
+      <div className="potion" onClick={() => props.whenPotionClicked(props.id)}>
         <h4>{props.name}</h4>
         <p>Price: {priceDisplay} Gold Ingots</p>
         <img src={props.img} alt="potion gif" />

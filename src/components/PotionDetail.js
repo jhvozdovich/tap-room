@@ -39,18 +39,20 @@ function PotionDetail(props) {
   }
   return (
     <React.Fragment>
-      <h3>{potion.name} Stats</h3>
-      <img src={potion.img} alt="Potion gif" />
-      <p>Price: {priceDisplay} Gold Ingots</p>
-      <p>Duration: {durationDisplay}</p>
-      <p>Effect: {effectDisplay}</p>
-      <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
-      <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
-      <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
-      <br />
-      <button onClick={props.onClickingUpdate}>Update Potion</button>
-      <button onClick={() => onClickingDelete(potion.id)}>Delete Potion</button>
-      <br />
+      <div className="detail-page">
+        <h3>{potion.name} Stats</h3>
+        <img src={potion.img} alt="Potion gif" />
+        <p>Price: {priceDisplay} Gold Ingots</p>
+        <p>Duration: {durationDisplay}</p>
+        <p>Effect: {effectDisplay}</p>
+        <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
+        <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
+        <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
+        <br />
+        <button onClick={props.onClickingUpdate}>Update Potion</button>
+        <button onClick={() => onClickingDelete(potion.id)}>Delete Potion</button>
+        <br />
+      </div>
     </React.Fragment>
   )
 }

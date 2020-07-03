@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 body {
-  margin: 20px;
+  margin: 30px;
   font-family: 'Press Start 2P';
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +13,7 @@ body {
   background-color: rgba(244, 234, 197, 0.5);
   border: 5px solid rgba(0, 0, 0, 0.5);
   padding: 10px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 
@@ -22,4 +22,26 @@ button, input, select, textarea {
   padding: 10px;
   margin: 10px;
   border: 4px solid black;
+}
+
+.potion-list {
+  column-count: 3;
+  column-width: 200px;
+  column-rule: 5px solid rgba(0, 0, 0, 0.5);
+  column-gap: 20px;
+}
+
+.detail-page {
+  padding-left: 250px;
+  padding-right: 250px
+}
+
+@media (max-width: 800px){
+  .potion-list {
+    column-count: 1;
+  }
+  .detail-page {
+    padding-left: 50px;
+    padding-right: 50px
+  }
 }
