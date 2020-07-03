@@ -7,6 +7,7 @@ function PotionList(props) {
     <React.Fragment>
       {props.potionList.map((potion) =>
         <Potion
+          whenPotionClicked={props.onPotionSelection}
           name={potion.name}
           price={potion.price}
           duration={potion.duration}
@@ -21,7 +22,8 @@ function PotionList(props) {
 }
 
 PotionList.propTypes = {
-  potionList: PropTypes.array
+  potionList: PropTypes.array,
+  onPotionSelection: PropTypes.func
 }
 
 export default PotionList;

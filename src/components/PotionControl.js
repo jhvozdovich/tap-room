@@ -1,6 +1,7 @@
 import React from "react";
 import PotionList from "./PotionList";
 import NewPotionForm from "./NewPotionForm";
+import PotionDetail from "./PotionDetail"
 
 import Indigo from "../img/Indigo.gif";
 import Purple from "../img/Purple.gif";
@@ -50,14 +51,29 @@ class PotionControl extends React.Component {
     })
   }
 
+  handleSelectedPotion = (id) => {
+    if (this.state.selectedPotionVisible === null) {
+      const selectedPotion = this.state.potionList.filter(potion => potion.id !== id);
+      this.setState({ selectedPotionVisible: selectedPotion });
+    } else {
+      this.setState({ selectedPotionVisible: null });
+    }
+  }
+
   render() {
     let currentlyVisibleState = null;
     let navButton = null
-    if (this.state.creatingFormVisible) {
+    if (this.state.selectedPotionVisible !== null) {
+      currentlyVisibleState = <PotionDetail
+        potion={this.state.selectedPotionVisible} />
+      navButton = <button onClick={this.handleSelectedPotion}>Back to List</button>
+    } else if (this.state.creatingFormVisible) {
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotion} />
       navButton = <button onClick={this.handleCreatingFormVisible}>Back to List</button>
     } else {
-      currentlyVisibleState = <PotionList potionList={this.state.potionList} />
+      currentlyVisibleState = <PotionList
+        potionList={this.state.potionList}
+        onPotionSelection={this.handleSelectedPotion} />
       navButton = <button onClick={this.handleCreatingFormVisible}>Add Potion</button>
     }
 
