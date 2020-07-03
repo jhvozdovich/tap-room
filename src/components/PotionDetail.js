@@ -5,9 +5,15 @@ function PotionDetail(props) {
   const { potion, onClickingDelete, onClickingBuy, onClickingRestock } = props;
   let stockDisplay;
   if (potion.stock > 0) {
-    stockDisplay = potion.stock
+    stockDisplay = potion.stock;
   } else {
-    stockDisplay = "Out of Stock!"
+    stockDisplay = "Out of Stock!";
+  }
+  let lowStockDisplayWarning;
+  if (potion.stock < 10) {
+    lowStockDisplayWarning = "Almost Out!";
+  } else {
+    lowStockDisplayWarning = null;
   }
   return (
     <React.Fragment>
@@ -16,7 +22,7 @@ function PotionDetail(props) {
       <p>Price: {potion.price} Gold Ingots</p>
       <p>Duration: {potion.duration}</p>
       <p>Effect: {potion.effect}</p>
-      <p>Stock: {stockDisplay}</p>
+      <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
       <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
       <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
       <button onClick={props.onClickingUpdate}>Update Potion</button>
