@@ -10,16 +10,22 @@ function PotionDetail(props) {
     stockDisplay = "Out of Stock!";
   }
   let lowStockDisplayWarning;
-  if (potion.stock > 10 || potion.stock === 0) {
+  if (potion.stock > 10 || potion.stock === 0 || isNaN(potion.stock)) {
     lowStockDisplayWarning = null;
   } else {
     lowStockDisplayWarning = "Almost Out!";
+  }
+  let priceDisplay;
+  if (isNaN(potion.price)) {
+    priceDisplay = "Unknown";
+  } else {
+    priceDisplay = potion.price
   }
   return (
     <React.Fragment>
       <h3>{potion.name} Stats</h3>
       <img src={potion.img} alt="Potion gif" />
-      <p>Price: {potion.price} Gold Ingots</p>
+      <p>Price: {priceDisplay} Gold Ingots</p>
       <p>Duration: {potion.duration}</p>
       <p>Effect: {potion.effect}</p>
       <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>

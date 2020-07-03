@@ -10,13 +10,23 @@ import Pink from "../img/Pink.gif";
 import Purple from "../img/Purple.gif";
 
 function ReusableForm(props) {
+  let nameInput;
+  if (props.buttonText === "Update Potion") {
+    nameInput = <input
+      type="text"
+      name="name"
+      placeholder="Potion Name" />
+  } else {
+    nameInput = <input
+      type="text"
+      required
+      name="name"
+      placeholder="Potion Name" />
+  }
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Potion Name" />
+        {nameInput}
         <br />
         <input
           type="number"

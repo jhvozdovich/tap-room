@@ -6,16 +6,18 @@ import ReusableForm from "./ReusableForm";
 
 function NewPotionForm(props) {
   function handleNewPotionForm(event) {
-    event.preventDefault();
-    props.onNewPotionCreation({
-      name: event.target.name.value,
-      price: parseInt(event.target.price.value),
-      duration: event.target.duration.value,
-      effect: event.target.effect.value,
-      stock: parseInt(event.target.stock.value),
-      img: event.target.img.value,
-      id: v4()
-    });
+    if (event.target.name.value !== "") {
+      event.preventDefault();
+      props.onNewPotionCreation({
+        name: event.target.name.value,
+        price: parseInt(event.target.price.value),
+        duration: event.target.duration.value,
+        effect: event.target.effect.value,
+        stock: parseInt(event.target.stock.value),
+        img: event.target.img.value,
+        id: v4()
+      });
+    }
   }
 
   return (
