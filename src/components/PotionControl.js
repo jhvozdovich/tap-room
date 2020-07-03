@@ -99,7 +99,11 @@ class PotionControl extends React.Component {
 
   handleRestockingPotion = (id) => {
     const restockedPotion = this.state.potionList.filter(potion => potion.id === id)[0];
-    restockedPotion.stock += 10;
+    if (isNaN(restockedPotion.stock)) {
+      restockedPotion.stock = 10;
+    } else {
+      restockedPotion.stock += 10;
+    }
     const updatedPotionList = this.state.potionList.filter(potion => potion.id !== this.state.selectedPotionVisible.id).concat(restockedPotion);
     this.setState({
       potionList: updatedPotionList

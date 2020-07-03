@@ -9,25 +9,41 @@ function PotionDetail(props) {
   } else {
     stockDisplay = "Out of Stock!";
   }
+
   let lowStockDisplayWarning;
-  if (potion.stock > 10 || potion.stock === 0 || isNaN(potion.stock)) {
+  if (potion.stock >= 10 || potion.stock === 0 || isNaN(potion.stock)) {
     lowStockDisplayWarning = null;
   } else {
     lowStockDisplayWarning = "Almost Out!";
   }
+
   let priceDisplay;
   if (isNaN(potion.price)) {
     priceDisplay = "Unknown";
   } else {
     priceDisplay = potion.price
   }
+
+  let durationDisplay;
+  if (potion.duration === "") {
+    durationDisplay = "Unknown";
+  } else {
+    durationDisplay = potion.duration
+  }
+
+  let effectDisplay;
+  if (potion.effect === "") {
+    effectDisplay = "Unknown";
+  } else {
+    effectDisplay = potion.effect
+  }
   return (
     <React.Fragment>
       <h3>{potion.name} Stats</h3>
       <img src={potion.img} alt="Potion gif" />
       <p>Price: {priceDisplay} Gold Ingots</p>
-      <p>Duration: {potion.duration}</p>
-      <p>Effect: {potion.effect}</p>
+      <p>Duration: {durationDisplay}</p>
+      <p>Effect: {effectDisplay}</p>
       <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
       <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
       <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
