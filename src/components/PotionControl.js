@@ -28,7 +28,7 @@ class PotionControl extends React.Component {
           name: "Potion of Night Vision",
           price: 6,
           duration: "3:00",
-          effect: "Visually brightens everything to a light level of 15,",
+          effect: "Visually brightens everything to a light level of 15",
           stock: 5,
           img: Indigo,
           id: "1"
@@ -53,7 +53,7 @@ class PotionControl extends React.Component {
 
   handleSelectedPotion = (id) => {
     if (this.state.selectedPotionVisible === null) {
-      const selectedPotion = this.state.potionList.filter(potion => potion.id !== id);
+      const selectedPotion = this.state.potionList.filter(potion => potion.id !== id)[0];
       this.setState({ selectedPotionVisible: selectedPotion });
     } else {
       this.setState({ selectedPotionVisible: null });
