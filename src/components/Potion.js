@@ -6,7 +6,7 @@ function Potion(props) {
     <React.Fragment>
       <div onClick={() => props.whenPotionClicked(props.id)}>
         <h4>{props.name}</h4>
-        <p>{props.price}</p>
+        <p>Pric: {props.price} Gold Ingots</p>
         <img src={props.img} alt="potion gif" />
       </div>
     </React.Fragment>
