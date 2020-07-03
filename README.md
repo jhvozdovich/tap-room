@@ -52,7 +52,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 
 ### Project Structure
 
-![Component diagram](public/TapRoomComponentDiagram.)
+![Component diagram](./public/TapRoomComponentDiagram.png)
 
 ### Specs
 | Spec | Input | Output |
