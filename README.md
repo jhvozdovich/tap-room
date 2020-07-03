@@ -1,4 +1,4 @@
-# **Witchy Brew**
+# **Crafty Brew**
 
 ### _React Fundamentals - Week 16 Project at Epicodus_
 
@@ -7,7 +7,7 @@
 
 ### Description
 
-_This application serves as a potion tracking app for a local witch to monitor their product storage. Design is based on Minecraft's design and items with resources listed below. Full CRUD functionality with React is the goal using functional and class components, local and shared state, JSX, and props with PropTypes._
+_This application serves as a potion tracking app for a local adventure shop to monitor their product storage. The site is Minecraft themed and image resources are listed below. Full CRUD functionality with React is achieved using functional and class components, local and shared state, JSX, and props with PropTypes._
 
 ### Instructions for use:
 
@@ -64,11 +64,12 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 | **User can decrement potion quantity with 'buy"** | User Input:"Potion Stock: 2, Click: Buy" | Output: “Potion Stock: 1" |
 | **"Out of Stock" is displayed when there are no potions left and the quantity cannot be decremented below 0** | User Input:"Potion Stock: "Out of Stock" Click: Buy" | Output: “Sorry! You better restock those potions!" |
 | **User can increase potion quantity with 'restock"** | User Input:"Potion Stock: 2, Click: Restock" | Output: “Potion Stock: 7" |
+| **User can access a form to edit existing potions** | User Input:"Click: Edit Potion" | Output: “Edit potion form is displayed" |
+| **User can edit potions via the form, empty fields retain their original information** | User Input:"Name: Potion of Seeing in the Dark"| Output: "Name: Potion of Seeing in the Dark, Price: 6 gold ingots, Duration: 3:00, Effect: Visually brightens everything to a light level of 15, Stock: 5 bottles" |
+| **User can delete a potion** | User Input:"Click: Potion of Regeneration, Click: Delete" | Output: “Potion of Swiftness, Potion of Fire Resistance, Potion of Night Vision" |
+| **An "Almost Out of Stock" wanring appears when stock is below 10** | User Input:"Stock: 10, Click: Buy" | Output: “Stock: 9 Almost Out!" |
 
 ### Stretch Goals
-* Editing a potion's properties
-* Deleting a potion
-* Almost empty warning when stock falls below 10
 * Color coding prices of potions
 
 ## Resources
