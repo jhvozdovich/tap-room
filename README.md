@@ -37,7 +37,8 @@ npm run start
 
 ### Known Bugs
 
-Troubleshooting div wrapping within columns. Exploring flexbox in css.
+* Troubleshooting div wrapping within columns. Exploring flexbox in css.
+* Maintaining order after editing or updating potion.
 
 ### Support and Contact Information
 
