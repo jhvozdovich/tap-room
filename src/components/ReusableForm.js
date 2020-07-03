@@ -16,36 +16,30 @@ function ReusableForm(props) {
         <input
           type="text"
           name="name"
-          required
           placeholder="Potion Name" />
         <br />
         <input
           type="number"
           name="price"
-          required
           placeholder="Price" />
         <br />
         <input
           type="text"
           name="duration"
-          required
           placeholder="Effect Duration" />
         <br />
         <textarea
           type="text"
           name="effect"
-          required
           placeholder="Effect Description" />
         <br />
         <input
           type="number"
           name="stock"
-          required
           placeholder="Stock" />
         <br />
         <select
           name="img"
-          required
           placeholder="Potion Color">
           <option value={Indigo}>Indigo</option>
           <option value={Lavendar}>Lavendar</option>

@@ -11,12 +11,14 @@ function PotionDetail(props) {
       <p>Duration: {potion.duration}</p>
       <p>Effect: {potion.effect}</p>
       <p>Stock: {potion.stock}</p>
+      <button onClick={props.onClickingUpdate}>Update Potion</button>
     </React.Fragment>
   )
 }
 
 PotionDetail.propTypes = {
-  potion: PropTypes.object
+  potion: PropTypes.object,
+  onClickingUpdate: PropTypes.func
 }
 
 export default PotionDetail;

@@ -1,7 +1,8 @@
 import React from "react";
 import PotionList from "./PotionList";
 import NewPotionForm from "./NewPotionForm";
-import PotionDetail from "./PotionDetail"
+import PotionDetail from "./PotionDetail";
+import EditPotionForm from "./EditPotionForm";
 
 import Indigo from "../img/Indigo.gif";
 import Purple from "../img/Purple.gif";
@@ -53,19 +54,43 @@ class PotionControl extends React.Component {
 
   handleSelectedPotion = (id) => {
     if (this.state.selectedPotionVisible === null) {
-      const selectedPotion = this.state.potionList.filter(potion => potion.id !== id)[0];
+      const selectedPotion = this.state.potionList.filter(potion => potion.id === id)[0];
       this.setState({ selectedPotionVisible: selectedPotion });
+      console.log(selectedPotion);
     } else {
       this.setState({ selectedPotionVisible: null });
     }
   }
 
+  handleUpdatingFormVisible = () => {
+    this.setState(prevState => ({
+      updatingFormVisible: !prevState.updatingFormVisible
+    }));
+  }
+
+  handleUpdatingPotion = (potionToUpdate) => {
+    const newPotionList = this.state.potionList
+      .filter(potion => potion.id !== this.state.selectedPotionVisible.id)
+      .concat(potionToUpdate);
+    this.setState({
+      potionList: newPotionList,
+      updatingFormVisible: false,
+      selectedPotionVisible: null
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
-    let navButton = null
-    if (this.state.selectedPotionVisible !== null) {
+    let navButton = null;
+    if (this.state.updatingFormVisible) {
+      currentlyVisibleState = <EditPotionForm
+        potion={this.state.selectedPotionVisible}
+        onEditPotion={this.handleUpdatingPotion} />
+      navButton = <button onClick={this.handleUpdatingFormVisible}>Back to Potion</button>
+    } else if (this.state.selectedPotionVisible !== null) {
       currentlyVisibleState = <PotionDetail
-        potion={this.state.selectedPotionVisible} />
+        potion={this.state.selectedPotionVisible}
+        onClickingUpdate={this.handleUpdatingFormVisible} />
       navButton = <button onClick={this.handleSelectedPotion}>Back to List</button>
     } else if (this.state.creatingFormVisible) {
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotion} />
