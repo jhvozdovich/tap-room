@@ -29,6 +29,11 @@ button, input, select, textarea {
   column-width: 200px;
   column-rule: 5px solid rgba(0, 0, 0, 0.5);
   column-gap: 20px;
+  column-fill: auto;
+}
+
+.potion {
+  break-inside: avoid;
 }
 
 .detail-page {
@@ -36,6 +41,14 @@ button, input, select, textarea {
   padding-right: 250px
 }
 
+h4 {
+  margin-block-start: 0em;
+}
+
+.potion-img {
+  margin-block-end: 1.33em;
+  width: 50px;
+}
 @media (max-width: 800px){
   .potion-list {
     column-count: 1;

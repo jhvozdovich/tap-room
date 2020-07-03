@@ -3,9 +3,16 @@ import Potion from "./Potion";
 import PropTypes from "prop-types";
 
 function PotionList(props) {
+  let instructionText;
+  if (props.potionList.length === 0) {
+    instructionText = "You have no potions! Add a few!";
+  } else {
+    instructionText = "Click a potion for more information";
+  }
+
   return (
     <React.Fragment>
-      <h4>Click a potion for more information</h4>
+      <h4>{instructionText}</h4>
       <div className="potion-list">
         {props.potionList.map((potion) =>
           <Potion

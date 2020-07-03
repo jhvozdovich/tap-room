@@ -11,10 +11,21 @@ function PotionDetail(props) {
   }
 
   let lowStockDisplayWarning;
-  if (potion.stock >= 10 || potion.stock === 0 || isNaN(potion.stock)) {
+  let stockWarningColor = {
+    color: "black"
+  }
+  if (potion.stock === 0 || isNaN(potion.stock)) {
+    lowStockDisplayWarning = null;
+    stockWarningColor = {
+      color: "darkred"
+    }
+  } else if (potion.stock >= 10) {
     lowStockDisplayWarning = null;
   } else {
     lowStockDisplayWarning = "Almost Out!";
+    stockWarningColor = {
+      color: "saddlebrown"
+    }
   }
 
   let priceDisplay;
@@ -40,12 +51,12 @@ function PotionDetail(props) {
   return (
     <React.Fragment>
       <div className="detail-page">
-        <h3>{potion.name} Stats</h3>
-        <img src={potion.img} alt="Potion gif" />
+        <h3 style={stockWarningColor}>{potion.name} Stats</h3>
+        <img className="potion-img" src={potion.img} alt="Potion gif" />
         <p>Price: {priceDisplay} Gold Ingots</p>
         <p>Duration: {durationDisplay}</p>
         <p>Effect: {effectDisplay}</p>
-        <p>Stock: {stockDisplay} {lowStockDisplayWarning}</p>
+        <p style={stockWarningColor}> Stock: {stockDisplay} {lowStockDisplayWarning}</p>
         <button onClick={() => onClickingBuy(potion.id)}>Purchase Potion</button>
         <button onClick={() => onClickingRestock(potion.id)}>Restock Potion</button>
         <br />
