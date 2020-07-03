@@ -12,6 +12,7 @@ function PotionList(props) {
           duration={potion.duration}
           effect={potion.effect}
           stock={potion.stock}
+          img={potion.img}
           id={potion.id}
           key={potion.id} />
       )}

@@ -6,6 +6,7 @@ function Potion(props) {
     <React.Fragment>
       <h4>{props.name}</h4>
       <p>{props.price}</p>
+      <img src={props.img} alt="potion gif" />
     </React.Fragment>
   )
 }
