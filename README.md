@@ -37,7 +37,7 @@ npm run start
 
 ### Known Bugs
 
-No bugs have been identified at the time of this update.
+Troubleshooting div wrapping within columns. Exploring flexbox in css.
 
 ### Support and Contact Information
 
